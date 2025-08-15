@@ -3,12 +3,13 @@
 
 # SDRSync
 
-**SDRSync** is an automated setup for synchronizing frequencies between [wfview](https://wfview.org/) and an RTL-SDR receiver over `rtl_tcp`.  
+**SDRSync** is an automated setup for synchronizing frequencies between [wfview](https://wfview.org/) and an [RTL-SDR] (https://www.rtl-sdr.com/) receiver over `rtl_tcp`. I built this so I could use an Android Tablet running [SDR++] (https://github.com/AlexandreRouma/SDRPlusPlus) to act as a panadapter for the IC7100 I have mounted in my Truck. 
+
 It installs all required dependencies (including RTL-SDR Blog v4 drivers and wfview), configures a systemd service, and runs three processes together:
 
 1. **rtl_tcp** – Serves your RTL-SDR dongle over the network.
 2. **wfview** – Provides rig control and CAT interface.
-3. **sync.py** – Keeps frequencies in sync between wfview and your SDR software.
+3. **sync.py** – Keeps frequencies in sync between wfview and your SDR software. (This is really all you need if you just want to sync frequencies from SDR++ and WFView)
 
 ---
 
