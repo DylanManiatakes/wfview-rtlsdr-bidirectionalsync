@@ -3,7 +3,7 @@
 
 # SDRSync
 
-**SDRSync** is an automated setup for synchronizing frequencies between [wfview](https://wfview.org/) and an [RTL-SDR] (https://www.rtl-sdr.com/) receiver over `rtl_tcp`. I built this so I could use an Android Tablet running [SDR++] (https://github.com/AlexandreRouma/SDRPlusPlus) to act as a panadapter for the IC7100 I have mounted in my Truck. 
+**SDRSync** is an automated setup for synchronizing frequencies between [wfview](https://wfview.org/) and an [RTL-SDR](https://www.rtl-sdr.com/) receiver over `rtl_tcp`. I built this so I could use an Android Tablet running [SDR++](https://github.com/AlexandreRouma/SDRPlusPlus) to act as a panadapter for the IC7100 I have mounted in my Truck. 
 
 It installs all required dependencies (including RTL-SDR Blog v4 drivers and wfview), configures a systemd service, and runs three processes together:
 
