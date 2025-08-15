@@ -26,8 +26,8 @@ It installs all required dependencies (including RTL-SDR Blog v4 drivers and wfv
 Run the following commands on your Raspberry Pi or Debian-based system:
 
 ```bash
-git clone https://github.com/DylanManiatakes/SDRSync---IC7100-Panadapter
-mv SDRSync---IC7100-Panadapter SDRSync
+git clone https://github.com/DylanManiatakes/wfview-rtlsdr-bidirectionalsync
+mv wfview-rtlsdr-bidrectionalsync SDRSync
 cd SDRSync
 chmod +x INSTALL.sh
 ./INSTALL.sh

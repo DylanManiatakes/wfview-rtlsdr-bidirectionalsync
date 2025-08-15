@@ -95,9 +95,9 @@ sudo -u "$TARGET_USER" "$WFVIEW_BUILD_SCRIPT_PATH"
 # If WFVIEW_BIN was set earlier (e.g., Flatpak), preserve it; else detect a binary path
 if [[ -z "${WFVIEW_BIN:-}" ]]; then
   WFVIEW_BIN="$(command -v wfview || true)"
-  [[ -z "$WFVIEW_BIN" ]] && WFVIEW_BIN="/usr/bin/wfview"
+  [[ -z "$WFVIEW_BIN" ]] && WFVIEW_BIN="/usr/local/bin/wfview"
 fi
-RTL_TCP_BIN="$(command -v rtl_tcp || true)"; [[ -z "$RTL_TCP_BIN" ]] && RTL_TCP_BIN="/usr/bin/rtl_tcp"
+RTL_TCP_BIN="$(command -v rtl_tcp || true)"; [[ -z "$RTL_TCP_BIN" ]] && RTL_TCP_BIN="/usr/local/bin/rtl_tcp"
 PYTHON_BIN="$(command -v python3 || true)"; [[ -z "$PYTHON_BIN" ]] && PYTHON_BIN="/usr/bin/python3"
 
 # --- write env file (editable by user) ---
@@ -115,14 +115,14 @@ RTL_PORT=14423
 RTL_TCP_EXTRA_ARGS="-a 0.0.0.0"
 # Sync script environment variables
 WF_HOST=127.0.0.1
-RTL_HOST=127.0.0.1
+RTL_HOST=127.0.0.2
 EOF
 chmod 644 "${ENV_FILE}"
 
 # --- write systemd unit (system-level) ---
 cat > "${SYSTEMD_UNIT}" <<'UNIT'
 [Unit]
-Description=wfview + rtl_tcp + bidirectional sync (system, runs under user session)
+Description=wfview + rtl_tcp + bidirectional sync
 After=graphical.target network-online.target systemd-user-sessions.service display-manager.service
 Wants=graphical.target network-online.target
 
