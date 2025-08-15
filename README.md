@@ -112,3 +112,4 @@ chmod +x INSTALL.sh
 
 ## 📜 License
 MIT License – You may freely use, modify, and distribute this project.
+
