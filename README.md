@@ -26,7 +26,7 @@ It installs all required dependencies (including RTL-SDR Blog v4 drivers and wfv
 Run the following commands on your Raspberry Pi or Debian-based system:
 
 ```bash
-git clone https://github.com/YOUR_GITHUB/SDRSync.git
+git clone https://github.com/DylanManiatakes/SDRSync.git
 cd SDRSync
 chmod +x INSTALL.sh
 ./INSTALL.sh
