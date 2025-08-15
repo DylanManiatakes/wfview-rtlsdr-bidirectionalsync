@@ -100,6 +100,7 @@ fi
 RTL_TCP_BIN="$(command -v rtl_tcp || true)"; [[ -z "$RTL_TCP_BIN" ]] && RTL_TCP_BIN="/usr/local/bin/rtl_tcp"
 PYTHON_BIN="$(command -v python3 || true)"; [[ -z "$PYTHON_BIN" ]] && PYTHON_BIN="/usr/bin/python3"
 
+
 # --- write env file (editable by user) ---
 cat > "${ENV_FILE}" <<EOF
 # sdrsync environment configuration
