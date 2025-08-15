@@ -1,0 +1,20 @@
+[Unit]
+Description=wfview + rtl_tcp + bidirectional sync (system, runs under user session)
+After=graphical.target network-online.target systemd-user-sessions.service display-manager.service
+Wants=graphical.target network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/sdrsync/sdrsync.env
+# Delay to ensure desktop/X and audio stack are ready
+ExecStartPre=/bin/sleep 30
+ExecStart=/etc/sdrsync/sdrsync.sh
+KillMode=control-group
+TimeoutStopSec=10
+Restart=always
+RestartSec=2
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
