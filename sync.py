@@ -155,7 +155,7 @@ def sigint_handler(signum, frame):
 def main():
     setup_logging()
     signal.signal(signal.SIGINT, sigint_handler)
-    logging.info(f"wfview @ {WF_HOST}:{WF_PORT} | rigctl @ {SDR_HOST}:{SDR_PORT}; poll={POLL_MS}ms, thres={CHANGE_THRESHOLD_HZ}Hz")
+    logging.info(f"wfview @ {WF_HOST}:{WF_PORT} | rigctl @ {RTL_HOST}:{RTL_PORT}; poll={POLL_MS}ms, thres={CHANGE_THRESHOLD_HZ}Hz")
 
     poll_sec = max(0.02, POLL_MS / 1000.0)
     tr = Tracker(CHANGE_THRESHOLD_HZ)
@@ -169,7 +169,7 @@ def main():
             if wf is None:
                 wf = connect(WF_HOST, WF_PORT, "wfview")
             if sdr is None:
-                sdr = connect(SDR_HOST, SDR_PORT, "rigctl")
+                sdr = connect(RTL_HOST, RTL_PORT, "rigctl")
         except Exception as e:
             logging.error(f"Connect error: {e}. Retrying in {RECONNECT_WAIT:.1f}s ...")
             for so in (wf, sdr):

@@ -28,7 +28,7 @@ Run the following commands on your Raspberry Pi or Debian-based system:
 
 ```bash
 git clone https://github.com/DylanManiatakes/wfview-rtlsdr-bidirectionalsync
-mv wfview-rtlsdr-bidrectionalsync SDRSync
+mv wfview-rtlsdr-bidirectionalsync SDRSync
 cd SDRSync
 chmod +x INSTALL.sh
 ./INSTALL.sh
