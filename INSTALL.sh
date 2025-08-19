@@ -111,12 +111,13 @@ RTL_TCP_BIN=${RTL_TCP_BIN}
 PYTHON_BIN=${PYTHON_BIN}
 SYNC_PY=${SYNC_DST}
 WF_PORT=4533
-RTL_PORT=14423
+SDR_PORT=14423
 # Extra args for rtl_tcp if needed (space-separated)
 RTL_TCP_EXTRA_ARGS="-a 0.0.0.0"
 # Sync script environment variables
 WF_HOST=127.0.0.1
-RTL_HOST=127.0.0.2
+SDR_HOST=127.0.0.2
+
 EOF
 chmod 644 "${ENV_FILE}"
 
@@ -145,6 +146,8 @@ WantedBy=multi-user.target
 UNIT
 
 chmod 644 "${SYSTEMD_UNIT}"
+chmod +700 /run/user/1000/
+
 
 # --- reload & enable ---
 systemctl daemon-reload
