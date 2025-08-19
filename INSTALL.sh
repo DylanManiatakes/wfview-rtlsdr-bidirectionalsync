@@ -146,7 +146,7 @@ WantedBy=multi-user.target
 UNIT
 
 chmod 644 "${SYSTEMD_UNIT}"
-chmod +700 /run/user/1000/
+chmod 700 /run/user/1000/
 
 
 # --- reload & enable ---
