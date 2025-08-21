@@ -1,7 +1,8 @@
 
 
 
-# SDRSync
+# SDRSync 
+**Still Not Auto Starting on boot for some reason. Looking into the issue**
 
 **SDRSync** is an automated setup for synchronizing frequencies between [wfview](https://wfview.org/) and an [RTL-SDR](https://www.rtl-sdr.com/) receiver over `rtl_tcp`. I built this so I could use an Android Tablet running [SDR++](https://github.com/AlexandreRouma/SDRPlusPlus) to act as a panadapter for the IC7100 I have mounted in my Truck. 
 
